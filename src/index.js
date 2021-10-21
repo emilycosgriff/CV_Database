@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {appStyle} from "./style.js";
+import {Form} from "./Text_box";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const App = () => {
+    const handleSubmit = data => {
+        const json = JSON.stringify(data, null, 4);
+        console.clear();
+        console.log(json);
+    };
+    return (
+        <div style={appStyle}>
+            <Form onSubmit={handleSubmit} />
+        </div>
+    );
+};
+
+const root = document.querySelector('#root');
+ReactDOM.render(<App />, root );
