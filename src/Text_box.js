@@ -1,7 +1,6 @@
 import React from 'react';
 import {formStyle, labelStyle, inputStyle, submitStyle} from "./style.js";
 
-
 const Field = React.forwardRef(({label, type}, ref) => {
     return (
         <div>
@@ -26,9 +25,9 @@ const Form = ({onSubmit}) => {
         <form style={formStyle} onSubmit={handleSubmit} >
             <Field ref={usernameRef} label="Username:" type="text" />
             <Field ref={passwordRef} label="Password:" type="password" />
-            <div>
-                <button style={submitStyle} type="submit">Submit</button>
-            </div>
+              <div>
+              <button style={submitStyle} type="submit">Submit</button>
+                </div>  
         </form>
     );
 };
